@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://btddilia1s0kb"]
+
+[ext_resource type="Texture2D" path="/home/cea/cm940732/projets/Platformer2D/exemple/png/PORTAL ORANGE-Sheet.png" id="1_igg2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b8uo"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pphe"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqrps"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wddgy"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvetx"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_165jy"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nurrj"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ekn1"]
+atlas = ExtResource("1_igg2h")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6b8uo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b8uo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pphe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqrps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wddgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvetx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_165jy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nurrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekn1")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="Spawn" type="Node2D" unique_id=459192598]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=812210391]
+texture_filter = 1
+position = Vector2(-4, -2)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_6b8uo")
+animation = &"new_animation"
+autoplay = "new_animation"

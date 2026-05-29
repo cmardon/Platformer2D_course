@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bushhabldhot5"]
+
+[ext_resource type="Script" uid="uid://c21ykwjj1ddx4" path="res://exemple/tp.gd" id="1_mb37a"]
+[ext_resource type="Texture2D" path="/home/cea/cm940732/projets/Platformer2D/exemple/png/PORTAL BLUE-Sheet.png" id="2_mb37a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me7t2"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qo4v"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06k4q"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5xqm"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag2w7"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmmxm"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1vsb"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abypd"]
+atlas = ExtResource("2_mb37a")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwhnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me7t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qo4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06k4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5xqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag2w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmmxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1vsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abypd")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwhnn"]
+radius = 8.0
+height = 34.0
+
+[node name="Tp" type="Node2D" unique_id=1578654070]
+script = ExtResource("1_mb37a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2098841217]
+texture_filter = 1
+position = Vector2(3, 0)
+sprite_frames = SubResource("SpriteFrames_pwhnn")
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=96373700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=354174554]
+position = Vector2(-3, 2)
+shape = SubResource("CapsuleShape2D_pwhnn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
