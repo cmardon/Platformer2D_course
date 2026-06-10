@@ -20,6 +20,8 @@ var dash_timer := 0.0
 var dash_direction := 1
 
 func _physics_process(delta: float) -> void:
+	if sprite.animation == "death":
+		return
 	
 	# ---------- DASH ----------
 	if Input.is_action_just_pressed("ui_shift") and not is_dashing:
@@ -83,7 +85,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				if sprite.animation != "idle":
 					sprite.play("idle")
-
+	
 	# Déplacement
 	move_and_slide()
 
