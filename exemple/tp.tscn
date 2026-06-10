@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bushhabldhot5"]
 
 [ext_resource type="Script" uid="uid://c21ykwjj1ddx4" path="res://exemple/tp.gd" id="1_mb37a"]
-[ext_resource type="Texture2D" path="/home/cea/cm940732/projets/Platformer2D/exemple/png/PORTAL BLUE-Sheet.png" id="2_mb37a"]
+[ext_resource type="Texture2D" path="png/PORTAL BLUE-Sheet.png" id="2_mb37a"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_me7t2"]
 atlas = ExtResource("2_mb37a")

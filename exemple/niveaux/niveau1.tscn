@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4sdo360ifkgt"]
 
-[ext_resource type="Texture2D" uid="uid://bcotrisa2t08r" path="res://tilesets/tileset_world.png" id="1_2xaqg"]
+[ext_resource type="Texture2D" uid="uid://6rt18mv4q2ws" path="res://tilesets/tileset_world.png" id="1_2xaqg"]
 [ext_resource type="PackedScene" uid="uid://bushhabldhot5" path="res://exemple/tp.tscn" id="2_x6l7f"]
 [ext_resource type="PackedScene" uid="uid://dndwngn32nvnw" path="res://exemple/player.tscn" id="3_ckbaw"]
 

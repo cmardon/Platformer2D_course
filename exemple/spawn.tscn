@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btddilia1s0kb"]
 
-[ext_resource type="Texture2D" path="/home/cea/cm940732/projets/Platformer2D/exemple/png/PORTAL ORANGE-Sheet.png" id="1_igg2h"]
+[ext_resource type="Texture2D" uid="uid://dqqag10t5mchn" path="res://exemple/png/PORTAL ORANGE-Sheet.png" id="1_igg2h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6b8uo"]
 atlas = ExtResource("1_igg2h")
