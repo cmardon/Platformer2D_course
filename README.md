@@ -45,8 +45,11 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
 - **Image** du personnage :
     - Ajouter un noeud de type `Sprite2D` (c'est le **noeud** qui permet d'afficher une image) 
     - Ajouter une texture dans l'inspecteur au niveau de `Texture <vide>` (Soit en cliquant sur `<vide>` -> Chargement Rapide -> [votre image] soit en glissant une image directement dans le rectangle `<vide>`)
-    - Toujours dans l'inspecteur du noeud `Sprite2D`, cliquer sur Texture et changer `Filter`en `Nearest` (Cela rendra la texture nette)
+    > **ℹ️** Pour rendre la texture nette : dans l'inspecteur du noeud `Sprite2D`, cliquer sur "Texture" et régler `Filter` sur `Nearest`.
+    
+    > **ℹ️** Le joueur est pour l'instant représenté par une image, il faut lui ajouter une boîte de collisions pour qu'il puisse intéragir avec son environnement
 
+<br>
 <br>
 
 - **Collisions** du personnage :
@@ -57,14 +60,16 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     L'arborescence doit ressembler à celle ci : <img src=".images_consigne/arbo_player_v1.png" align="center">
 
     Si ce n'est pas le cas, glisser les noeuds pour correspondre.
+    > **ℹ️** Le joueur a une zone de collisions, quand il croisera un autre objet avec une zone de collision (un sol par exmple), les deux se bloqueront. Autrement dit, le joueur ne tombera pas à travers le sol.
 
+<br>
 <br>
 
 - **Mouvements** du personnage :
     - Cliquer sur le noeud parent (nommé "Joueur") et attacher un script avec l'icône <img src=".images_consigne/attach_script.png" align="center"> ou en faisant `clic-droit -> Attacher un script`
     - Sélectionner le modèle de script `CharacterBody2D : Basic Movement` et `Créer`
 
-    <img src=".images_consigne/characterbody2D_modele.png" width="300" >
+        <img src=".images_consigne/characterbody2D_modele.png" width="300" >
 
     - Un script devrait être généré automatiquement.
 
@@ -72,18 +77,48 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
 
 ### Création d'un niveau
 
-### Ajout des téléporteurs entre niveaux
+- Ouvrir la scène niveau1.tscn, c'est la scène qui contiendra notre premier niveau.
 
-### Ajout d'ennemis
+<br>
 
-### Ajout de projectiles
+- **Installation** d'un "TileMap" :
+    - Ajouter un noeud `TileMap` à la scène
+    - Cliquer sur `Tile Set <vide>`dans l'inspecteur et sélectionner `TileSet`
+    - Dans le `Système de Fichiers`, parcourir le dossier `tilesets/` et choisir un tileset que l'on apprécie (Il s'agit des briques qui serviront a construire notre niveau). Double cliquer sur un tileset l'affiche en grand dans l'inspecteur si besoin.
+    - Glisser le tileset choisi dans la zone en pointillés (voir figure en dessous) et cliquer sur "Oui" pour découper le tileset intelligemment 
 
-## Vidéos 
+        <img src=".images_consigne/glisser_tileset.png" width="700" >
 
-### Création du joueur
-[VIDEO_J_V1](.images_consigne/player_v1.mp4)
+        > **ℹ️** Le TileMap est initialisé et découpé bloc par bloc. L'objectif est maintenant de l'utiliser pour construire notre niveau.
 
-### Création d'un niveau
+<br>
+<br>
+
+- **Manipulation** du TileMap :
+    - Tout bas de l'interface, sélectionner l'onglet TileMap
+    
+        <img src=".images_consigne/onglets_tilemap.png" width="500" >
+
+        > **ℹ️** L'onglet TileMap permet de dessiner son niveau, tandis que l'onglet TileSet permet de modifier/améliorer ses blocs (en ajoutant des collisions par exemple)
+    - Cliquer sur un bloc et dessiner sur l'éditeur de scène.
+        > **ℹ️** Il est possible de sélectionner plusieurs blocs d'un coup pour dessiner des groupes (exemple : sélectionner un arbre entier). 
+        <br>Ne pas hésiter à utiliser les outils de ligne, zone, ... et de sélection pour déplacer des objets.
+    - Pour changer la taille des blocs du niveau, ajuster le paramètre `Scale` dans l'inspecteur dans la section `Transform`. 
+    <br>Exemple : mettre le `Scale x/y` à 4.0 rendra le quadrillage 4x plus gros.
+    > **ℹ️** Pour rendre la texture nette : dans l'inspecteur du noeud `TileMap`, cliquer sur "Texture" et régler `Filter` sur `Nearest`.
+
+<br>
+
+- Glisser le fichier `joueur.tscn` au milieu de la scène `niveau1.tscn`
+    > **ℹ️** En lançant la simulation, le joueur devrait tomber à travers le niveau. Normal, les blocs du niveau n'ont pas de collisions.
+
+<br>
+
+- **Collisions des blocs** du TileMap
+    - Cliquer sur le noeud TileMap pour faire apparaître l'inspecteur
+    - **Dans l'inspecteur**, cliquer sur TileSet
+    - Dérouler la section `Physics Layers` et cliquer sur `Ajouter un élément` (Cet élément va nous permettre d'ajouter des collisions à nos blocs)
+    <!-- TODO : Bah la suite -->
 
 ### Ajout des téléporteurs entre niveaux
 
