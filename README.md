@@ -165,3 +165,18 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
         ```
     - Tester en lançant le niveau 1 contenant le portail/objet !
         > **ℹ️** Il faut comprendre ce que l'on a fait. Ici, nous avons créé un objet (portail.tscn) qui, une fois traversé par notre joueur, nous téléporte à une autre scène. Ici il nous téléporte à `niveau1.tscn`, donc on boucle sur le même niveau. Maintenant il faut créer un niveau 2 s'appellant `niveau2.tscn` et changer le code du portail pour qu'il nous téléporte au niveau 2 !
+
+## C'est votre tour !
+
+> **ℹ️** Ne pas hésiter à utiliser internet et/ou chatGPT à partir de maintenant pour voir les possibilités ! Ou le faire seul comme un pro.
+
+**Idées diverses** (Les votres seront les meilleures) :
+- Ajoutez une caméra fixe au personnage pour le suivre tout au long du niveau, permettant de faire des niveaux plus grand que de la taille d'un écran.
+- Forcez le déplacement du joueur pour lui faire parcourir le niveau automatiquement (comme dans Geometry Dash 😉)
+- Ajoutez des ennemies en créant une scène a part identique au joueur mais qui bouge toute seule et vous tue au contact (avec un `Area2D` !)
+- Ajoutez des pièges mortels statiques
+- Ajoutez des projectiles/pouvoirs à lancer !
+- Donnez plusieurs sauts a votre personnage, la possibilité de planer, dash ?
+
+- Animez le sprite2D en passant par un `AnimatedSprite2D`
+- Améliorez votre niveaux en utilisants plusieurs couches de tileset (pour avoir un fond décor et un niveau au premier plan)
