@@ -165,11 +165,3 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
         ```
     - Tester en lançant le niveau 1 contenant le portail/objet !
         > **ℹ️** Il faut comprendre ce que l'on a fait. Ici, nous avons créé un objet (portail.tscn) qui, une fois traversé par notre joueur, nous téléporte à une autre scène. Ici il nous téléporte à `niveau1.tscn`, donc on boucle sur le même niveau. Maintenant il faut créer un niveau 2 s'appellant `niveau2.tscn` et changer le code du portail pour qu'il nous téléporte au niveau 2 !
-
----
-### Ajout d'ennemis
-
-
----
-### Ajout de projectiles
-
