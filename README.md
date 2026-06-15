@@ -28,7 +28,7 @@ Cette interface devrait apparaître :
 
 ## 3. Lancement de l'exemple
 
-**Avec niveau1.tscn ouvert**, cliquer sur ce bouton : <img src=".images_consigne/play_scene.png" width="300" align="center">
+**Avec `niveau1.tscn` ouvert**, cliquer sur ce bouton : <img src=".images_consigne/play_scene.png" width="300" align="center">
 
 Le jeu doit se lancer dans une fenêtre à part. Appuyez sur les **flèches** pour bouger et sur **espace** pour sauter.
 
@@ -41,10 +41,10 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
 > **⚠️ CONSEIL POUR TOUT LE TP ⚠️** 
 >
 > Exécutez (avec `F6`) votre code à chaque jalon pour voir l'évolution de ce qui a été créé !
-
+---
 ### Création du joueur
 
-- Ouvrir la scène joueur.tscn, c'est la scène qui contiendra notre joueur : son image, ses collisions, son script de mouvements et actions.
+- Ouvrir la scène `joueur.tscn`, c'est la scène qui contiendra notre joueur : son image, ses collisions, son script de mouvements et actions.
 
 <br>
 
@@ -63,7 +63,7 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     - Lui donner une forme de rectangle en cliquant, dans l'inspecteur, sur `Shape <vide>`
     - Redimensionner le rectangle au format du personnage
 
-    L'arborescence doit ressembler à celle ci : <img src=".images_consigne/arbo_player_v1.png" align="center">
+    L'arborescence doit ressembler à celle ci : <img src=".images_consigne/arbo_player_v1.png" align="center"  width="150">
 
     Si ce n'est pas le cas, glisser les noeuds pour correspondre.
     > **ℹ️** Le joueur a une zone de collisions, quand il croisera un autre objet avec une zone de collision (un sol par exmple), les deux se bloqueront. Autrement dit, le joueur ne tombera pas à travers le sol.
@@ -80,10 +80,10 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     - Un script devrait être généré automatiquement.
 
 - Tester le personnage, il devrait tomber dans le vide et bouger en appuyant sur les flèches
-
+---
 ### Création d'un niveau
 
-- Ouvrir la scène niveau1.tscn, c'est la scène qui contiendra notre premier niveau.
+- Ouvrir la scène `niveau1.tscn`, c'est la scène qui contiendra notre premier niveau.
 
 <br>
 
@@ -103,7 +103,7 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
 - **Manipulation** du TileMap :
     - Tout bas de l'interface, sélectionner l'onglet TileMap
     
-        <img src=".images_consigne/onglets_tilemap.png" width="500" >
+        <img src=".images_consigne/onglets_tilemap.png" width="600">
 
         > **ℹ️** L'onglet TileMap permet de dessiner son niveau, tandis que l'onglet TileSet permet de modifier/améliorer ses blocs (en ajoutant des collisions par exemple)
     - Cliquer sur un bloc et dessiner sur l'éditeur de scène.
@@ -114,10 +114,12 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     > **ℹ️** Pour rendre la texture nette : dans l'inspecteur du noeud `TileMap`, cliquer sur "Texture" et régler `Filter` sur `Nearest`.
 
 <br>
+<br>
 
 - Glisser le fichier `joueur.tscn` au milieu de la scène `niveau1.tscn`
     > **ℹ️** En lançant la simulation, le joueur devrait tomber à travers le niveau. Normal, les blocs du niveau n'ont pas de collisions.
 
+<br>
 <br>
 
 - **Collisions des blocs** du TileMap
@@ -126,14 +128,48 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     - Dérouler la section `Physics Layers` et cliquer sur `Ajouter un élément` (Cet élément va nous permettre d'ajouter des collisions à nos blocs)
     - Pour ajouter les collisions aux blocs, cliquer sur l'onglet TileSet en bas de l'écran
         
-        <img src=".images_consigne/onglets_tileset.png" width="500" >
+        <img src=".images_consigne/onglets_tileset.png" width="600" >
     
     - Avec l'outil `Sélectionner`, cliquer sur un des blocs auquel ajouter des collisions et ouvrir la section `Physique/Physic Layer 0` dans le panneau ayant apparu
     - Appuyer sur `F` pour ajouter la zone de collision (le bloc devrait devenir rouge)
         > **ℹ️** Pour chaque bloc nécessitant une collision, cliquer dessus et appuyer sur `F`
 
-### Ajout des téléporteurs entre niveaux
+<br>
 
+---
+### Ajout des téléporteurs entre niveaux
+- Ouvrir la scène `portail.tscn`, c'est la scène qui contiendra le téléporteur permettant de se téléporter d'un niveau à un autre.
+
+- **Image** du téléporteur : 
+    - Chercher une image d'objet dans le dossier `objets/`, ce sera l'objet à atteindre pour être téléporté
+    - Comme pour le joueur, ajouter un `Sprite2D` et y glisser l'image choisie
+
+<br>
+
+- **Détection** du Joueur :
+    - Ajouter au noeud parent un noeud `Area2D` (C'est un noeud qui permet de détecter les collisions avec un autre objet pour effecteur une action. Ici, on va téléporter le joueur à un autre niveau quand il le touchera)
+    - Sur l'`Area2D`, ajouter un noeud `CollisionShape2D` et donner une zone de collision à l'objet.
+
+        L'arborescence doit ressembler à celle ci : <img src=".images_consigne/arbo_tp.png" align="center" width="150">
+
+    - Ouvrir la scène `niveau1.tscn` et glisser le fichiers `portail.tscn` à l'endroit voulu. Tester avec (F6). Pour l'instant, le joueur passe au travers de l'objet sans intéraction, normal !
+    - Retourner dans `portail.tscn` et suivre les étapes suivantes pour créer un signal entre le noeud `Area2D` et le changement de niveau (pour que quand on passe dans le `Area2D`, un signal soit envoyé pour téléporter le joueur) :
+        - Clic-droit sur le noeud `Portail` et attacher un script : Décocher la case `Modèle` puis cliquer sur `Créer` (Cela devrait créer un script presque vide)
+        - Cliquer sur le noeud `Area2D`
+        - Cliquer sur l'onglet `Signaux` tout en haut à droite de l'application
+        - Clic-droit sur `body_entered(body:Node2D)` > `Connecter` > `Connecter`
+        - Supprimer la ligne `pass # Replace with function body.`
+        - A la place, mettre la ligne : 
+        ```python
+        get_tree().call_deferred("change_scene_to_file", "res://my_game/niveau1.tscn")
+        ```
+    - Tester en lançant le niveau 1 contenant le portail/objet !
+        > **ℹ️** Il faut comprendre ce que l'on a fait. Ici, nous avons créé un objet (portail.tscn) qui, une fois traversé par notre joueur, nous téléporte à une autre scène. Ici il nous téléporte à `niveau1.tscn`, donc on boucle sur le même niveau. Maintenant il faut créer un niveau 2 s'appellant `niveau2.tscn` et changer le code du portail pour qu'il nous téléporte au niveau 2 !
+
+---
 ### Ajout d'ennemis
 
+
+---
 ### Ajout de projectiles
+
