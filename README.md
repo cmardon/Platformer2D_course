@@ -32,9 +32,15 @@ Cette interface devrait apparaître :
 
 Le jeu doit se lancer dans une fenêtre à part. Appuyez sur les **flèches** pour bouger et sur **espace** pour sauter.
 
+> **ℹ️** Il est aussi possible de cliquer sur `F6` pour lancer une scène
+
 ## 4. Création de son propre jeu
 
 Les scènes pour la création du jeu sont dans le dossier `my_game/`
+
+> **⚠️ CONSEIL POUR TOUT LE TP ⚠️** 
+>
+> Exécutez (avec `F6`) votre code à chaque jalon pour voir l'évolution de ce qui a été créé !
 
 ### Création du joueur
 
@@ -118,7 +124,13 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     - Cliquer sur le noeud TileMap pour faire apparaître l'inspecteur
     - **Dans l'inspecteur**, cliquer sur TileSet
     - Dérouler la section `Physics Layers` et cliquer sur `Ajouter un élément` (Cet élément va nous permettre d'ajouter des collisions à nos blocs)
-    <!-- TODO : Bah la suite -->
+    - Pour ajouter les collisions aux blocs, cliquer sur l'onglet TileSet en bas de l'écran
+        
+        <img src=".images_consigne/onglets_tileset.png" width="500" >
+    
+    - Avec l'outil `Sélectionner`, cliquer sur un des blocs auquel ajouter des collisions et ouvrir la section `Physique/Physic Layer 0` dans le panneau ayant apparu
+    - Appuyer sur `F` pour ajouter la zone de collision (le bloc devrait devenir rouge)
+        > **ℹ️** Pour chaque bloc nécessitant une collision, cliquer dessus et appuyer sur `F`
 
 ### Ajout des téléporteurs entre niveaux
 
