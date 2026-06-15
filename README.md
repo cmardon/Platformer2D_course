@@ -1,7 +1,3 @@
-<!-- 
-![Texte alternatif](image.png "Le titre de mon image") 
--->
-
 # Cours : Création d'un Platformer en 2D avec Godot
 
 ## 1. Installation
