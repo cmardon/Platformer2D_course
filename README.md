@@ -34,6 +34,8 @@ Le jeu doit se lancer dans une fenêtre à part. Appuyez sur les **flèches** po
 
 Les scènes pour la création du jeu sont dans le dossier `my_game/`
 
+<img src=".images_consigne/my_game.png" width="500">
+
 > **⚠️ CONSEIL POUR TOUT LE TP ⚠️** 
 >
 > Exécutez (avec `F6`) votre code à chaque jalon pour voir l'évolution de ce qui a été créé !
@@ -46,7 +48,13 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
 
 - **Image** du personnage :
     - Ajouter un nœud de type `Sprite2D` (c'est le **nœud** qui permet d'afficher une image)
+        > **ℹ️** Pour ajouter un nœud, faire clic-droit sur un noeud de l'aborescence, puis cliquer sur `ajouter un nœud enfant`
     - Ajouter une texture dans l'inspecteur au niveau de `Texture <vide>` (Soit en cliquant sur `<vide>` -> Chargement Rapide -> [votre image] soit en glissant une image directement dans le rectangle `<vide>`)
+
+        <img src=".images_consigne/vide.png" align="center"  width="300">
+
+    <br>
+
     > **ℹ️** Pour rendre la texture nette : dans l'inspecteur du noeud `Sprite2D`, cliquer sur "Texture" et régler `Filter` sur `Nearest`.
     
     > **ℹ️** Le joueur est pour l'instant représenté par une image, il faut lui ajouter une boîte de collisions pour qu'il puisse interagir avec son environnement
@@ -59,7 +67,7 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     - Lui donner une forme de rectangle en cliquant, dans l'inspecteur, sur `Shape <vide>`
     - Redimensionner le rectangle au format du personnage
 
-    L'arborescence doit ressembler à celle-ci : <img src=".images_consigne/arbo_player_v1.png" align="center"  width="150">
+    L'arborescence doit ressembler à celle-ci : <img src=".images_consigne/arbo_player_v1.png" align="center"  width="300">
 
     Si ce n'est pas le cas, glisser les nœuds pour que l'arborescence corresponde.
     > **ℹ️** Le joueur a une zone de collision, quand il croisera un autre objet avec une zone de collision (un sol par exemple), les deux se bloqueront. Autrement dit, le joueur ne tombera pas à travers le sol.
@@ -112,7 +120,7 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
 <br>
 <br>
 
-- Glisser le fichier `joueur.tscn` au milieu de la scène `niveau1.tscn`
+- Depuis le `Système de Fichiers`, glisser le fichier `joueur.tscn` au milieu de la scène `niveau1.tscn`
     > **ℹ️** En lançant la simulation, le joueur devrait tomber à travers le niveau. Normal, les blocs du niveau n'ont pas de collisions.
 
 <br>
@@ -160,6 +168,8 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
         get_tree().call_deferred("change_scene_to_file", "res://my_game/niveau1.tscn")
         ```
     - Tester en lançant le niveau 1 contenant le portail/objet !
+        > **⚠️** Si le portail rentre en collision avec un bloc du niveau, il relancera le niveau en boucle (car il détecte uen collision !). Bien faire attention à ce que le téléporteur ne touche rien.
+        
         > **ℹ️** Il faut comprendre ce que l'on a fait. Ici, nous avons créé un objet (portail.tscn) qui, une fois traversé par notre joueur, nous téléporte à une autre scène. Ici il nous téléporte à `niveau1.tscn`, donc on boucle sur le même niveau. Maintenant il faut créer un niveau 2 s'appelant `niveau2.tscn` et changer le code du portail pour qu'il nous téléporte au niveau 2 !
 
 ## C'est votre tour !
