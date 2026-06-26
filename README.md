@@ -154,7 +154,7 @@ Les scènes pour la création du jeu sont dans le dossier `my_game/`
     - Ajouter au nœud parent un nœud `Area2D` (C'est un nœud qui permet de détecter les collisions avec un autre objet pour effectuer une action. Ici, on va téléporter le joueur à un autre niveau quand il le touchera.)
     - Sur l'`Area2D`, ajouter un noeud `CollisionShape2D` et donner une zone de collision à l'objet.
 
-        L'arborescence doit ressembler à celle-ci : <img src=".images_consigne/arbo_tp.png" align="center" width="150">
+        L'arborescence doit ressembler à celle-ci : <img src=".images_consigne/arbo_tp.png" align="center" width="300">
 
     - Ouvrir la scène `niveau1.tscn` et glisser le fichier `portail.tscn` à l'endroit voulu. Tester avec (F6). Pour l'instant, le joueur passe à travers l'objet sans interaction, normal !
     - Retourner dans `portail.tscn` et suivre les étapes suivantes pour créer un signal entre le noeud `Area2D` et le changement de niveau (pour que lorsque l'on passe dans le `Area2D`, un signal soit envoyé pour téléporter le joueur) :
